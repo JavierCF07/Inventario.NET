@@ -1,0 +1,76 @@
+﻿using AutoMapper;
+using InventarioAPI.Contexts;
+using InventarioAPI.Entities;
+using InventarioAPI.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace InventarioAPI.Controllers
+{
+    [Route("api/v1/[controller]")]
+    [ApiController]
+    public class ProveedoresController : ControllerBase
+    {
+        private readonly InventarioDBContext contexto;
+        private readonly IMapper mapper;
+        public ProveedoresController(InventarioDBContext contexto, IMapper mapper)
+        {
+            this.contexto = contexto;
+            this.mapper = mapper;
+        }
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ProveedoresDTO>>> Get()
+        {
+            var proveedor = await contexto.Proveedores.ToListAsync();
+            var proveedorDTO = mapper.Map<List<ProveedoresDTO>>(proveedor);
+            return proveedorDTO;
+        }
+
+        [HttpGet("{id}", Name = "GetProveedores")]
+        public async Task<ActionResult<ProveedoresDTO>> Get(int id)
+        {
+            var proveedor = await this.contexto.Proveedores.FirstOrDefaultAsync(x => x.codigoProveedor == id);
+            if(proveedor == null)
+            {
+                return NotFound();
+            }
+            var proveedorDTO = mapper.Map<ProveedoresDTO>(proveedor);
+            return proveedorDTO;
+        }
+        public async Task<ActionResult> Post([FromBody] ProveedoresCreacionDTO proveedorCreacion)
+        {
+            var proveedor = mapper.Map<Proveedores>(proveedorCreacion);
+            contexto.Add(proveedor);
+            await contexto.SaveChangesAsync();
+            var proveedorDTO = mapper.Map<ProveedoresDTO>(proveedor);
+            return new CreatedAtRouteResult("GetProveedores", new { id = proveedor.codigoProveedor }, proveedorDTO);
+        }
+        [HttpPut("{id}")]
+        public async Task<ActionResult> Put(int id, [FromBody] ProveedoresCreacionDTO proveedorActualizar)
+        {
+            var proveedor = mapper.Map<Proveedores>(proveedorActualizar);
+            proveedor.codigoProveedor = id;
+            contexto.Entry(proveedor).State = EntityState.Modified;
+            await contexto.SaveChangesAsync();
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<ProveedoresDTO>> Delete(int id)
+        {
+            var codigoProveedor = await contexto.Proveedores.Select(x => x.codigoProveedor)
+                .FirstOrDefaultAsync(x => x == id);
+            if (codigoProveedor == default(int))
+            {
+                return NotFound();
+            }
+            contexto.Remove(new Proveedores { codigoProveedor = id });
+            await contexto.SaveChangesAsync();
+            return NoContent();
+        }
+    }
+}
