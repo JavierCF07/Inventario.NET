@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace InventarioAPI.Migrations.InventarioIdentity
+namespace InventarioAPI.Migrations
 {
-    public partial class UserDB : Migration
+    public partial class Inventario : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
