@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace InventarioAPI.Migrations.InventarioDB
 {
-    public partial class UserDB : Migration
+    public partial class Inventario : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
