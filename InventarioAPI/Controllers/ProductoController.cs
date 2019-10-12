@@ -32,7 +32,7 @@ namespace InventarioAPI.Controllers
             var productosDTO = mapper.Map<List<ProductoDTO>>(productos);
             return productosDTO;
         }
-
+        //listar
         [HttpGet("{id}", Name = "GetProducto")]
         public async Task<ActionResult<ProductoDTO>> Get(int id)
         {
@@ -44,6 +44,8 @@ namespace InventarioAPI.Controllers
             var productosDTO = mapper.Map<ProductoDTO>(productos);
             return productosDTO;
         }
+
+        //agregar
         public async Task<ActionResult> Post([FromBody] ProductoCreacionDTO productoCreacion)
         {
             var producto = mapper.Map<Producto>(productoCreacion);
@@ -52,6 +54,8 @@ namespace InventarioAPI.Controllers
             var productoDTO = mapper.Map<ProductoDTO>(producto);
             return new CreatedAtRouteResult("GetProducto", new { id = producto.codigoProducto }, productoDTO);
         }
+
+        //actualizar
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, [FromBody] ProductoCreacionDTO productoActualizar)
         {
@@ -61,6 +65,8 @@ namespace InventarioAPI.Controllers
             await contexto.SaveChangesAsync();
             return NoContent();
         }
+
+        //eliminar
         [HttpDelete("{id}")]
         public async Task<ActionResult<ProductoDTO>> Delete(int id)
         {
