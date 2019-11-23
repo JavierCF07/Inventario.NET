@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace InventarioAPI.Migrations.InventarioDB
+namespace InventarioAPI.Migrations
 {
     [DbContext(typeof(InventarioDBContext))]
-    [Migration("20191005164334_Inventario")]
-    partial class Inventario
+    [Migration("20191123144841_Tablas")]
+    partial class Tablas
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

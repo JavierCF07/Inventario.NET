@@ -28,11 +28,29 @@ namespace InventarioAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CategoriaDTO>>> Get()
+        public async Task<ActionResult<CategoriaPaginacionDTO>> Get(int numeroDePaginas = 1, int cantidadDeRegistros = 5)
         {
-            var categoria = await contexto.Categorias.ToListAsync();
-            var categoriaDTO = mapper.Map <List<CategoriaDTO>>(categoria);
-            return categoriaDTO;
+            var categoriaPaginacionDTO = new CategoriaPaginacionDTO();
+            var query = contexto.Categorias.AsQueryable();
+            int totalDeRegistros = query.Count();
+            int totalPaginas = (int)Math.Ceiling((Double)totalDeRegistros / cantidadDeRegistros);
+
+            var categoria = await contexto.Categorias
+                .Skip(cantidadDeRegistros * (numeroDePaginas - 1))
+                .Take(cantidadDeRegistros)
+                .ToListAsync();
+
+            categoriaPaginacionDTO.Content = mapper.Map <List<CategoriaDTO>>(categoria);
+            if (numeroDePaginas == 1)
+            {
+                categoriaPaginacionDTO.First = true;
+
+            }else if (numeroDePaginas == totalPaginas)
+            {
+                categoriaPaginacionDTO.Last = true;
+            }
+            categoriaPaginacionDTO.Number = 0;
+            return categoriaPaginacionDTO;
         }
 
         [HttpGet("{id}", Name = "GetCategoria")]

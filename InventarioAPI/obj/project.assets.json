@@ -11849,23 +11849,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\programacion\\.nuget\\packages\\": {},
+    "C:\\Users\\wALC\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\programacion\\Desktop\\Proyecto\\API.NET\\InventarioAPI\\InventarioAPI.csproj",
+      "projectUniqueName": "C:\\Users\\wALC\\Desktop\\Proyecto\\API.NET\\InventarioAPI\\InventarioAPI.csproj",
       "projectName": "InventarioAPI",
-      "projectPath": "C:\\Users\\programacion\\Desktop\\Proyecto\\API.NET\\InventarioAPI\\InventarioAPI.csproj",
-      "packagesPath": "C:\\Users\\programacion\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\programacion\\Desktop\\Proyecto\\API.NET\\InventarioAPI\\obj\\",
+      "projectPath": "C:\\Users\\wALC\\Desktop\\Proyecto\\API.NET\\InventarioAPI\\InventarioAPI.csproj",
+      "packagesPath": "C:\\Users\\wALC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\wALC\\Desktop\\Proyecto\\API.NET\\InventarioAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\programacion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\wALC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
