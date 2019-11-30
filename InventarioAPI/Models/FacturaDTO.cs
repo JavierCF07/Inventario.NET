@@ -11,8 +11,9 @@ namespace InventarioAPI.Models
     {
         public int numeroFactura { get; set; }
         [Required]
-        public string nit { get; set; }
         public DateTime fecha { get; set; }
         public decimal total { get; set; }
+        public int nit { get; set; }
+        public Clientes Clientes { get; set; }
     }
 }

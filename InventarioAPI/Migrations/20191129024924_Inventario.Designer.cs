@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InventarioAPI.Migrations
 {
     [DbContext(typeof(InventarioDBContext))]
-    [Migration("20191123144841_Tablas")]
-    partial class Tablas
+    [Migration("20191129024924_Inventario")]
+    partial class Inventario
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,11 +37,12 @@ namespace InventarioAPI.Migrations
 
             modelBuilder.Entity("InventarioAPI.Entities.Clientes", b =>
                 {
-                    b.Property<string>("nit")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("nit")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("DPI")
-                        .IsRequired();
+                    b.Property<decimal>("DPI")
+                        .HasConversion(new ValueConverter<decimal, decimal>(v => default(decimal), v => default(decimal), new ConverterMappingHints(precision: 20, scale: 0)));
 
                     b.Property<string>("direccion");
 
@@ -130,7 +131,7 @@ namespace InventarioAPI.Migrations
                     b.Property<string>("email")
                         .IsRequired();
 
-                    b.Property<string>("nit");
+                    b.Property<int>("nit");
 
                     b.HasKey("codigoEmail");
 
@@ -165,8 +166,7 @@ namespace InventarioAPI.Migrations
 
                     b.Property<DateTime>("fecha");
 
-                    b.Property<string>("nit")
-                        .IsRequired();
+                    b.Property<int>("nit");
 
                     b.Property<decimal>("total");
 
@@ -266,7 +266,7 @@ namespace InventarioAPI.Migrations
                     b.Property<string>("descripcion")
                         .IsRequired();
 
-                    b.Property<string>("nit");
+                    b.Property<int>("nit");
 
                     b.Property<string>("numero");
 
@@ -349,7 +349,8 @@ namespace InventarioAPI.Migrations
                 {
                     b.HasOne("InventarioAPI.Entities.Clientes", "Clientes")
                         .WithMany()
-                        .HasForeignKey("nit");
+                        .HasForeignKey("nit")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("InventarioAPI.Entities.EmailProveedor", b =>
@@ -393,7 +394,8 @@ namespace InventarioAPI.Migrations
                 {
                     b.HasOne("InventarioAPI.Entities.Clientes", "Clientes")
                         .WithMany()
-                        .HasForeignKey("nit");
+                        .HasForeignKey("nit")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("InventarioAPI.Entities.TelefonoProveedor", b =>

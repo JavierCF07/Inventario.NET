@@ -9,7 +9,7 @@ namespace InventarioAPI.Models
     public class ClientesCreacionDTO
     {
         [Required]
-        public string DPI { get; set; }
+        public ulong DPI { get; set; }
         public string nombre { get; set; }
         public string direccion { get; set; }
     }

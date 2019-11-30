@@ -11,7 +11,7 @@ namespace InventarioAPI.Entities
         public int codigoEmail{ get; set; }
         [Required]
         public string email { get; set; }
-        public string nit { get; set; }
+        public int nit { get; set; }
         public Clientes Clientes { get; set; }
     }
 }

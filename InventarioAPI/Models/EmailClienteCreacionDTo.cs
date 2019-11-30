@@ -10,6 +10,6 @@ namespace InventarioAPI.Models
     {
         [Required]
         public string email { get; set; }
-        public string nit { get; set; }
+        public int nit { get; set; }
     }
 }

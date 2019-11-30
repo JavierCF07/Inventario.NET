@@ -14,6 +14,6 @@ namespace InventarioAPI.Models
         public int codigoProveedor { get; set; }
         public DateTime fecha { get; set; }
         public decimal total { get; set; }
-        public virtual ICollection<Proveedores> Proveedores { get; set; }
+        public Proveedores Proveedores { get; set; }
     }
 }

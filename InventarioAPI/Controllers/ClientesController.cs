@@ -35,7 +35,7 @@ namespace InventarioAPI.Controllers
             return clientesDTO;
         }
         [HttpGet("{id}", Name = "GetClientes")]
-        public async Task<ActionResult<ClientesDTO>> Get(string id)
+        public async Task<ActionResult<ClientesDTO>> Get(int id)
         {
             var clientes = await contexto.Clientes.FirstOrDefaultAsync(x => x.nit == id);
             if(clientes == null)
@@ -55,7 +55,7 @@ namespace InventarioAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> Put(string id, [FromBody] ClientesCreacionDTO clientesActualizar)
+        public async Task<ActionResult> Put(int id, [FromBody] ClientesCreacionDTO clientesActualizar)
         {
             var clientes = mapper.Map<Clientes>(clientesActualizar);
             clientes.nit = id;
@@ -65,11 +65,11 @@ namespace InventarioAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<ClientesDTO>> Delete(string id)
+        public async Task<ActionResult<ClientesDTO>> Delete(int id)
         {
             var codigoClientes = await contexto.Clientes.Select(x => x.nit)
                 .FirstOrDefaultAsync(x => x == id);
-            if(codigoClientes == default(string))
+            if(codigoClientes == default(int))
             {
                 return NotFound();
             }

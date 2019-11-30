@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace InventarioAPI.Migrations
 {
-    public partial class Tablas : Migration
+    public partial class Inventario : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -25,8 +25,9 @@ namespace InventarioAPI.Migrations
                 name: "Clientes",
                 columns: table => new
                 {
-                    nit = table.Column<string>(nullable: false),
-                    DPI = table.Column<string>(nullable: false),
+                    nit = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    DPI = table.Column<decimal>(nullable: false),
                     nombre = table.Column<string>(nullable: true),
                     direccion = table.Column<string>(nullable: true)
                 },
@@ -72,7 +73,7 @@ namespace InventarioAPI.Migrations
                     codigoEmail = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     email = table.Column<string>(nullable: false),
-                    nit = table.Column<string>(nullable: true)
+                    nit = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -82,7 +83,7 @@ namespace InventarioAPI.Migrations
                         column: x => x.nit,
                         principalTable: "Clientes",
                         principalColumn: "nit",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -91,9 +92,9 @@ namespace InventarioAPI.Migrations
                 {
                     numeroFactura = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    nit = table.Column<string>(nullable: false),
                     fecha = table.Column<DateTime>(nullable: false),
-                    total = table.Column<decimal>(nullable: false)
+                    total = table.Column<decimal>(nullable: false),
+                    nit = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -114,7 +115,7 @@ namespace InventarioAPI.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     numero = table.Column<string>(nullable: true),
                     descripcion = table.Column<string>(nullable: false),
-                    nit = table.Column<string>(nullable: true)
+                    nit = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -124,7 +125,7 @@ namespace InventarioAPI.Migrations
                         column: x => x.nit,
                         principalTable: "Clientes",
                         principalColumn: "nit",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

@@ -9,8 +9,8 @@ namespace InventarioAPI.Models
     public class FacturaCreacionDTO
     {
         [Required]
-        public string nit { get; set; }
         public DateTime fecha { get; set; }
         public decimal total { get; set; }
+        public string nit { get; set; }
     }
 }

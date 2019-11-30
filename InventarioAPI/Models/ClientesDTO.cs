@@ -9,9 +9,9 @@ namespace InventarioAPI.Models
 {
     public class ClientesDTO
     {
-        public string nit { get; set; }
+        public int nit { get; set; }
         [Required]
-        public string DPI { get; set; }
+        public ulong DPI { get; set; }
         public string nombre { get; set; }
         public string direccion { get; set; }
     }

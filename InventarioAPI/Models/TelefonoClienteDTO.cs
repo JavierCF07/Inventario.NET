@@ -13,7 +13,7 @@ namespace InventarioAPI.Models
         public string numero { get; set; }
         [Required]
         public string descripcion { get; set; }
-        public string nit { get; set; }
+        public int nit { get; set; }
         public Clientes Clientes { get; set; }
     }
 }

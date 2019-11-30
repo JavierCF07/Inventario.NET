@@ -11849,23 +11849,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\wALC\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\javie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wALC\\Desktop\\Proyecto\\API.NET\\InventarioAPI\\InventarioAPI.csproj",
+      "projectUniqueName": "C:\\Users\\javie\\OneDrive\\Documents\\Visual Studio 2019\\Proyectos\\API.NET\\InventarioAPI\\InventarioAPI.csproj",
       "projectName": "InventarioAPI",
-      "projectPath": "C:\\Users\\wALC\\Desktop\\Proyecto\\API.NET\\InventarioAPI\\InventarioAPI.csproj",
-      "packagesPath": "C:\\Users\\wALC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wALC\\Desktop\\Proyecto\\API.NET\\InventarioAPI\\obj\\",
+      "projectPath": "C:\\Users\\javie\\OneDrive\\Documents\\Visual Studio 2019\\Proyectos\\API.NET\\InventarioAPI\\InventarioAPI.csproj",
+      "packagesPath": "C:\\Users\\javie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\javie\\OneDrive\\Documents\\Visual Studio 2019\\Proyectos\\API.NET\\InventarioAPI\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\wALC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\javie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11905,16 +11901,23 @@
             "version": "[2.2.0, )"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },
