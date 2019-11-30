@@ -28,28 +28,39 @@ namespace InventarioAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<CategoriaPaginacionDTO>> Get(int numeroDePaginas = 1, int cantidadDeRegistros = 5)
+        public async Task<ActionResult<IEnumerable<CategoriaDTO>>> Get()
         {
+            var categoria = await contexto.Categorias.ToListAsync();
+            var categoriaDTO = mapper.Map<List<CategoriaDTO>>(categoria);
+            return categoriaDTO;
+        }
+
+        [HttpGet("{numeroDePagina}", Name = "GetCategoriaPage")]
+        [Route("page/{numeroDePagina}")]
+        public async Task<ActionResult<CategoriaPaginacionDTO>> GetCategoriaPage(int numeroDePagina = 0)
+        {
+            int cantidadDeRegistros = 5;
             var categoriaPaginacionDTO = new CategoriaPaginacionDTO();
             var query = contexto.Categorias.AsQueryable();
             int totalDeRegistros = query.Count();
             int totalPaginas = (int)Math.Ceiling((Double)totalDeRegistros / cantidadDeRegistros);
-
+            categoriaPaginacionDTO.Number = numeroDePagina;
             var categoria = await contexto.Categorias
-                .Skip(cantidadDeRegistros * (numeroDePaginas - 1))
+                .Skip(cantidadDeRegistros * (categoriaPaginacionDTO.Number))
                 .Take(cantidadDeRegistros)
                 .ToListAsync();
 
-            categoriaPaginacionDTO.Content = mapper.Map <List<CategoriaDTO>>(categoria);
-            if (numeroDePaginas == 1)
+            categoriaPaginacionDTO.TotalPages = totalPaginas;
+            categoriaPaginacionDTO.Content = mapper.Map<List<CategoriaDTO>>(categoria);
+
+            if (numeroDePagina == 0)
             {
                 categoriaPaginacionDTO.First = true;
 
-            }else if (numeroDePaginas == totalPaginas)
+            }else if (numeroDePagina == totalPaginas)
             {
                 categoriaPaginacionDTO.Last = true;
             }
-            categoriaPaginacionDTO.Number = 0;
             return categoriaPaginacionDTO;
         }
 
