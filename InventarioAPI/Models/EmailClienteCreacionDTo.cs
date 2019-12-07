@@ -8,7 +8,6 @@ namespace InventarioAPI.Models
 {
     public class EmailClienteCreacionDTo
     {
-        [Required]
         public string email { get; set; }
         public int nit { get; set; }
     }

@@ -35,6 +35,35 @@ namespace InventarioAPI.Controllers
             return emailDTO;
         }
 
+        [HttpGet("{numeroDePagina}", Name = "GetEmailClientesPage")]
+        [Route("page/{numeroDePagina}")]
+        public async Task<ActionResult<EmailClientePaginacionDTO>> GetEmailClientesPage(int numeroDePagina = 0)
+        {
+            int cantidadDeRegistros = 5;
+            var emailClientePaginacionDTO = new EmailClientePaginacionDTO();
+            var query = contexto.EmailClientes.AsQueryable();
+            int totalDeRegistros = query.Count();
+            int totalPaginas = (int)Math.Ceiling((Double)totalDeRegistros / cantidadDeRegistros);
+            emailClientePaginacionDTO.Number = numeroDePagina;
+            var email = await contexto.EmailClientes
+                .Include("Clientes")
+                .Skip(cantidadDeRegistros * (emailClientePaginacionDTO.Number))
+                .Take(cantidadDeRegistros)
+                .ToListAsync();
+            emailClientePaginacionDTO.TotalPages = totalPaginas;
+            emailClientePaginacionDTO.Content = mapper.Map<List<EmailClienteDTO>>(email);
+            
+            if (numeroDePagina == 0)
+            {
+                emailClientePaginacionDTO.First = true;
+            }
+            else if (numeroDePagina == totalPaginas)
+            {
+                emailClientePaginacionDTO.Last = true;
+            }
+            return emailClientePaginacionDTO;
+        }
+
         [HttpGet("{id}", Name = "GetEmailCliente")]
         public async Task<ActionResult<EmailClienteDTO>> Get(int id)
         {

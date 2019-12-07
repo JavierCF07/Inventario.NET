@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InventarioAPI.Migrations
 {
     [DbContext(typeof(InventarioDBContext))]
-    [Migration("20191207032648_Inventario")]
+    [Migration("20191207150629_Inventario")]
     partial class Inventario
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

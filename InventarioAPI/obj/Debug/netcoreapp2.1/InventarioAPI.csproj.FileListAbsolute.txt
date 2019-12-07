@@ -99,3 +99,17 @@ C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\In
 C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.dll
 C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.pdb
 C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.csprojAssemblyReference.cache
+C:\Users\cristianchanquin.ALUMNOS\Desktop\Nueva carpeta\Inventario.NET\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.deps.json
+C:\Users\cristianchanquin.ALUMNOS\Desktop\Nueva carpeta\Inventario.NET\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.runtimeconfig.json
+C:\Users\cristianchanquin.ALUMNOS\Desktop\Nueva carpeta\Inventario.NET\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.runtimeconfig.dev.json
+C:\Users\cristianchanquin.ALUMNOS\Desktop\Nueva carpeta\Inventario.NET\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.dll
+C:\Users\cristianchanquin.ALUMNOS\Desktop\Nueva carpeta\Inventario.NET\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.pdb
+C:\Users\cristianchanquin.ALUMNOS\Desktop\Nueva carpeta\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.csproj.CoreCompileInputs.cache
+C:\Users\cristianchanquin.ALUMNOS\Desktop\Nueva carpeta\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorAssemblyInfo.cache
+C:\Users\cristianchanquin.ALUMNOS\Desktop\Nueva carpeta\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorAssemblyInfo.cs
+C:\Users\cristianchanquin.ALUMNOS\Desktop\Nueva carpeta\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.AssemblyInfoInputs.cache
+C:\Users\cristianchanquin.ALUMNOS\Desktop\Nueva carpeta\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.AssemblyInfo.cs
+C:\Users\cristianchanquin.ALUMNOS\Desktop\Nueva carpeta\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorTargetAssemblyInfo.cache
+C:\Users\cristianchanquin.ALUMNOS\Desktop\Nueva carpeta\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.dll
+C:\Users\cristianchanquin.ALUMNOS\Desktop\Nueva carpeta\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.pdb
+C:\Users\cristianchanquin.ALUMNOS\Desktop\Nueva carpeta\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.csprojAssemblyReference.cache
