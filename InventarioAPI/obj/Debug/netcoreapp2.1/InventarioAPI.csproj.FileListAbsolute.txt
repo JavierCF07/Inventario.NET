@@ -83,3 +83,19 @@ C:\Users\wALC\Desktop\Proyecto\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp
 C:\Users\wALC\Desktop\Proyecto\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorTargetAssemblyInfo.cache
 C:\Users\wALC\Desktop\Proyecto\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.dll
 C:\Users\wALC\Desktop\Proyecto\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.pdb
+C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.deps.json
+C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.runtimeconfig.json
+C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.runtimeconfig.dev.json
+C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.dll
+C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.pdb
+C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorAssemblyInfo.cache
+C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorAssemblyInfo.cs
+C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.AssemblyInfoInputs.cache
+C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.AssemblyInfo.cs
+C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorTargetAssemblyInfo.cache
+C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.dll
+C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.pdb
+C:\Users\javie\OneDrive\Documents\Visual Studio 2019\Proyectos\Inventario.NET\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.csprojAssemblyReference.cache

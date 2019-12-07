@@ -38,30 +38,30 @@ namespace InventarioAPI.Contexts
                 .HasKey(key => key.codigoCategoria);
             modelBuilder.Entity<TipoEmpaque>().ToTable("TipoEmpaque")
                 .HasKey(key => key.codigoEmpaque);
-            modelBuilder.Entity<Clientes>().ToTable("Clientes")
-                .HasKey(key => key.nit);
             modelBuilder.Entity<Producto>().ToTable("Productos")
                 .HasKey(key => key.codigoProducto);
+            modelBuilder.Entity<Clientes>().ToTable("Clientes")
+                .HasKey(key => key.nit);
+            modelBuilder.Entity<EmailCliente>().ToTable("EmailCliente")
+                .HasKey(key => key.codigoEmail);
+            modelBuilder.Entity<TelefonoCliente>().ToTable("TelefonoCliente")
+                .HasKey(key => key.codigoTelefono);
             modelBuilder.Entity<Proveedores>().ToTable("Proveedores")
                 .HasKey(key => key.codigoProveedor);
-            modelBuilder.Entity<Compras>().ToTable("Compras")
-                .HasKey(key => key.idCompra);
-            modelBuilder.Entity<Inventario>().ToTable("Inventario")
-                .HasKey(key => key.codigoInventario);
-            modelBuilder.Entity<DetalleCompra>().ToTable("DetalleCompra")
-                .HasKey(key => key.idDetalle);
             modelBuilder.Entity<EmailProveedor>().ToTable("EmailProveedor")
-                .HasKey(key => key.codigoEmail);
-            modelBuilder.Entity<EmailCliente>().ToTable("EmailCliente")
                 .HasKey(key => key.codigoEmail);
             modelBuilder.Entity<TelefonoProveedor>().ToTable("TelefonoProveedor")
                 .HasKey(key => key.codigoTelefono);
-            modelBuilder.Entity<TelefonoCliente>().ToTable("TelefonoCliente")
-                .HasKey(key => key.codigoTelefono);
+            modelBuilder.Entity<Compras>().ToTable("Compras")
+                .HasKey(key => key.idCompra);
+            modelBuilder.Entity<DetalleCompra>().ToTable("DetalleCompra")
+                .HasKey(key => key.idDetalle);
             modelBuilder.Entity<Factura>().ToTable("Factura")
                 .HasKey(key => key.numeroFactura);
             modelBuilder.Entity<DetalleFactura>().ToTable("DetalleFactura")
                 .HasKey(key => key.codigoDetalle);
+            modelBuilder.Entity<Inventario>().ToTable("Inventario")
+                .HasKey(key => key.codigoInventario);
             base.OnModelCreating(modelBuilder);
         }
 

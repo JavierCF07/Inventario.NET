@@ -11,6 +11,6 @@ namespace InventarioAPI.Models
         [Required]
         public DateTime fecha { get; set; }
         public decimal total { get; set; }
-        public string nit { get; set; }
+        public int nit { get; set; }
     }
 }

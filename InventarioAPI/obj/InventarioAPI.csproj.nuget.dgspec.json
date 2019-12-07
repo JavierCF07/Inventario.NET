@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\javie\\OneDrive\\Documents\\Visual Studio 2019\\Proyectos\\API.NET\\InventarioAPI\\InventarioAPI.csproj": {}
+    "C:\\Users\\javie\\OneDrive\\Documents\\Visual Studio 2019\\Proyectos\\Inventario.NET\\InventarioAPI\\InventarioAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\javie\\OneDrive\\Documents\\Visual Studio 2019\\Proyectos\\API.NET\\InventarioAPI\\InventarioAPI.csproj": {
+    "C:\\Users\\javie\\OneDrive\\Documents\\Visual Studio 2019\\Proyectos\\Inventario.NET\\InventarioAPI\\InventarioAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\javie\\OneDrive\\Documents\\Visual Studio 2019\\Proyectos\\API.NET\\InventarioAPI\\InventarioAPI.csproj",
+        "projectUniqueName": "C:\\Users\\javie\\OneDrive\\Documents\\Visual Studio 2019\\Proyectos\\Inventario.NET\\InventarioAPI\\InventarioAPI.csproj",
         "projectName": "InventarioAPI",
-        "projectPath": "C:\\Users\\javie\\OneDrive\\Documents\\Visual Studio 2019\\Proyectos\\API.NET\\InventarioAPI\\InventarioAPI.csproj",
+        "projectPath": "C:\\Users\\javie\\OneDrive\\Documents\\Visual Studio 2019\\Proyectos\\Inventario.NET\\InventarioAPI\\InventarioAPI.csproj",
         "packagesPath": "C:\\Users\\javie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\javie\\OneDrive\\Documents\\Visual Studio 2019\\Proyectos\\API.NET\\InventarioAPI\\obj\\",
+        "outputPath": "C:\\Users\\javie\\OneDrive\\Documents\\Visual Studio 2019\\Proyectos\\Inventario.NET\\InventarioAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\javie\\AppData\\Roaming\\NuGet\\NuGet.Config",

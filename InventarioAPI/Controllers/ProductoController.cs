@@ -32,7 +32,36 @@ namespace InventarioAPI.Controllers
             var productosDTO = mapper.Map<List<ProductoDTO>>(productos);
             return productosDTO;
         }
-        //listar
+
+        [HttpGet("{numeroDePagina}", Name = "GetProductoPage")]
+        [Route("page/{numeroDePagina}")]
+        public async Task<ActionResult<ProductoPaginacionDTO>> GetProductoPage(int numeroDePagina = 0)
+        {
+            int cantidadDeRegistros = 5;
+            var productoPaginacionDTO = new ProductoPaginacionDTO();
+            var query = contexto.Productos.AsQueryable();
+            int totalDeRegistros = query.Count();
+            int totalPaginas = (int)Math.Ceiling((Double)totalDeRegistros / cantidadDeRegistros);
+            productoPaginacionDTO.Number = numeroDePagina;
+            var productos = await contexto.Productos
+                .Include("Categoria").Include("TipoEmpaque")
+                .Skip(cantidadDeRegistros * (productoPaginacionDTO.Number))
+                .Take(cantidadDeRegistros)
+                .ToListAsync();
+            productoPaginacionDTO.TotalPages = totalPaginas;
+            productoPaginacionDTO.Content = mapper.Map<List<ProductoDTO>>(productos);
+            
+            if (numeroDePagina == 0)
+            {
+                productoPaginacionDTO.First = true;
+            }
+            else if (numeroDePagina == totalPaginas)
+            {
+                productoPaginacionDTO.Last = true;
+            }
+            return productoPaginacionDTO;
+        }
+
         [HttpGet("{id}", Name = "GetProducto")]
         public async Task<ActionResult<ProductoDTO>> Get(int id)
         {

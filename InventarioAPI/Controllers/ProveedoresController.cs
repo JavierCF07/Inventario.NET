@@ -33,6 +33,33 @@ namespace InventarioAPI.Controllers
             return proveedorDTO;
         }
 
+        [HttpGet("{numeroDePagina}", Name = "GetProveedoresPage")]
+        [Route("page/{numeroDePagina}")]
+        public async Task<ActionResult<ProveedoresPaginacionDTO>> GetProveedoresPage(int numeroDePagina = 0)
+        {
+            int cantidadDeRegistros = 5;
+            var proveedorPaginacionDTO = new ProveedoresPaginacionDTO();
+            var query = contexto.Proveedores.AsQueryable();
+            int totalDeRegistros = query.Count();
+            int totalPaginas = (int)Math.Ceiling((Double)totalDeRegistros / cantidadDeRegistros);
+            proveedorPaginacionDTO.Number = numeroDePagina;
+            var proveedor = await contexto.Proveedores
+                .Skip(cantidadDeRegistros * (proveedorPaginacionDTO.Number))
+                .Take(cantidadDeRegistros)
+                .ToListAsync();
+            proveedorPaginacionDTO.TotalPages = totalPaginas;
+            proveedorPaginacionDTO.Content = mapper.Map<List<ProveedoresDTO>>(proveedor);
+            if (numeroDePagina == 0)
+            {
+                proveedorPaginacionDTO.First = true;
+            }
+            else if (numeroDePagina == totalPaginas)
+            {
+                proveedorPaginacionDTO.Last = true;
+            }
+            return proveedorPaginacionDTO;
+        }
+
         [HttpGet("{id}", Name = "GetProveedores")]
         public async Task<ActionResult<ProveedoresDTO>> Get(int id)
         {

@@ -36,6 +36,34 @@ namespace InventarioAPI.Controllers
             return comprasDTO;
         }
 
+        [HttpGet("{numeroDePagina}", Name = "GetComprasPage")]
+        [Route("page/{numeroDePagina}")]
+        public async Task<ActionResult<CompraPaginacionDTO>> GetComprasPage(int numeroDePagina = 0)
+        {
+            int cantidadDeRegistros = 5;
+            var compraPaginacionDTO = new CompraPaginacionDTO();
+            var query = contexto.Compras.AsQueryable();
+            int totalDeRegistros = query.Count();
+            int totalPaginas = (int)Math.Ceiling((Double)totalDeRegistros / cantidadDeRegistros);
+            compraPaginacionDTO.Number = numeroDePagina;
+            var compras = await contexto.Compras
+                .Include("Proveedores")
+                .Skip(cantidadDeRegistros * (compraPaginacionDTO.Number))
+                .Take(cantidadDeRegistros)
+                .ToListAsync();
+            compraPaginacionDTO.TotalPages = totalPaginas;
+            compraPaginacionDTO.Content = mapper.Map<List<ComprasDTO>>(compras);
+
+            if (numeroDePagina == 0)
+            {
+                compraPaginacionDTO.First = true;
+            } else if (numeroDePagina == totalPaginas)
+            {
+                compraPaginacionDTO.Last = true;
+            }
+            return compraPaginacionDTO;
+        }
+
         [HttpGet("{id}",Name = "GetCompras")]
         public async Task<ActionResult<ComprasDTO>> Get(int id)
         {

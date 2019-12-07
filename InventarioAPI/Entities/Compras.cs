@@ -13,7 +13,7 @@ namespace InventarioAPI.Entities
         public int numeroDocumento { get; set; }
         public int codigoProveedor { get; set; }
         public DateTime fecha { get; set; }
-        public decimal total { get; set; }
+        public decimal total { get; set; }  
         public Proveedores Proveedores { get; set; }
     }
 }

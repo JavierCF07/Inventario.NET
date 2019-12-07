@@ -32,6 +32,36 @@ namespace InventarioAPI.Controllers
             var tipoEmpaqueDTO = mapper.Map<List<TipoEmpaqueDTO>>(tipoEmpaque);
             return tipoEmpaqueDTO;
         }
+
+        [HttpGet("{numeroDePagina}", Name = "GetTipoEmpaquePage")]
+        [Route("page/{numeroDePagina}")]
+        public async Task<ActionResult<TipoEmpaquePaginacionDTO>> GetTipoEmpaquePage(int numeroDePagina = 0)
+        {
+            int cantidadDeRegistros = 5;
+            var TipoEmpaquePaginacionDTO = new TipoEmpaquePaginacionDTO();
+            var query = contexto.TipoEmpaques.AsQueryable();
+            int totalDeRegistros = query.Count();
+            int totalPaginas = (int)Math.Ceiling((Double)totalDeRegistros / cantidadDeRegistros);
+            TipoEmpaquePaginacionDTO.Number = numeroDePagina;
+            var tipoEmpaque = await contexto.TipoEmpaques
+                .Skip(cantidadDeRegistros * (TipoEmpaquePaginacionDTO.Number))
+                .Take(cantidadDeRegistros)
+                .ToListAsync();
+
+            TipoEmpaquePaginacionDTO.TotalPages = totalPaginas;
+            TipoEmpaquePaginacionDTO.Content = mapper.Map<List<TipoEmpaqueDTO>>(tipoEmpaque);
+            
+            if (numeroDePagina == 0)
+            {
+                TipoEmpaquePaginacionDTO.First = true;
+            } 
+            else if (numeroDePagina == totalPaginas)
+            {
+                TipoEmpaquePaginacionDTO.Last = true;
+            }
+            return TipoEmpaquePaginacionDTO; 
+        }
+
         [HttpGet("{id}", Name = "GetTipoEmpaque")]
         public async Task<ActionResult<TipoEmpaqueDTO>> Get(int id)
         {
